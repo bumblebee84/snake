@@ -1,4 +1,5 @@
 let map = document.getElementsByClassName('map')[0];
+
 function Snake() {
     this.width = 20;
     this.height = 20;
@@ -13,7 +14,7 @@ function Snake() {
 
 Snake.prototype.display = function () {
     for (let i = 0; i < this.body.length; i++) {
-        if (this.body[i].x != null){
+        if (this.body[i].x != null) {
             let newSnake = document.createElement('div');
             this.body[i].temp = newSnake;
             newSnake.style.width = this.width + 'px';
@@ -57,9 +58,7 @@ Snake.prototype.run = function () {
     }
 
     for (let i = 0; i < this.body.length; i++) {
-        // if (this.body[i].temp != null) {
-        //     map.removeChild(this.body[i].temp);
-        // }
+        map.removeChild(this.body[i].temp);
     }
 
     this.display();
