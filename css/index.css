@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.map{
+    width: 600px;
+    height: 600px;
+    margin: 100px auto;
+    border: 3px solid red;
+    position: relative;
+}
+
+.grid-cell{
+    width: 20px;
+    height: 20px;
+    background-color: #cccccc;
+    box-sizing: border-box;
+    border: 1px solid orangered;
+    position: absolute;
+}
