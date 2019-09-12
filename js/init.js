@@ -14,7 +14,7 @@ function init() {
     snake.display();
     setInterval(function () {
         snake.run();
-    }, 100);
+    }, 300);
 
 
     document.body.onkeydown = function (e) {

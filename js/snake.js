@@ -57,8 +57,50 @@ Snake.prototype.run = function () {
         food.display();
     }
 
+    for (let i=4;i<this.body.length;i++){
+        if (this.body[0].x == this.body[i].x && this.body[0].y == this.body[i].y){
+            alert('你撞到自己了,点击确定重新开局');
+
+            for(let i=0;i<this.body.length;i++){
+                if(this.body[i].temp != null){
+                    map.removeChild(this.body[i].temp);
+                }
+            }
+
+            this.body = [
+                {x: 2, y: 0},
+                {x: 1, y: 0},
+                {x: 0, y: 0}
+            ];
+
+            this.direction = 'right';
+            this.display();
+        }
+    }
+
+    if(this.body[0].x < 0 || this.body[0].x > 29 || this.body[0].y < 0 || this.body[0].y > 29){
+        alert('你撞墙了,点击确定重新开始');
+
+        for(let i=0;i<this.body.length;i++){
+            if(this.body[i].temp != null){
+                map.removeChild(this.body[i].temp);
+            }
+        }
+
+        this.body = [
+            {x: 2, y: 0},
+            {x: 1, y: 0},
+            {x: 0, y: 0}
+        ];
+
+        this.direction = 'right';
+        this.display();
+    }
+
     for (let i = 0; i < this.body.length; i++) {
-        map.removeChild(this.body[i].temp);
+        if (this.body[i].temp != null) {
+            map.removeChild(this.body[i].temp);
+        }
     }
 
     this.display();
